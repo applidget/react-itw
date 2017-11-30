@@ -35,7 +35,7 @@ class App extends Component {
       return <li><span>{todo}</span> <button onClick={this.handleDelete(idx)}>supprimer </button></li>
     });
     return (
-      <div className="App">
+      <div>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
