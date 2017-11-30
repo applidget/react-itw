@@ -22,9 +22,17 @@ class App extends Component {
     event.preventDefault();
   }
 
+  handleDelete(position) {
+    return () => {
+      let { todos } = this.state;
+      todos.splice(position, 1);
+      this.setState({todos: todos});
+    }
+  }
+
   render() {
-    const list = this.state.todos.map (todo => {
-      return <li>{todo}</li>
+    const list = this.state.todos.map ((todo, idx) => {
+      return <li><span>{todo}</span> <button onClick={this.handleDelete(idx)}>supprimer </button></li>
     });
     return (
       <div className="App">
